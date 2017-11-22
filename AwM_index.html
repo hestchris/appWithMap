@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/vue"></script>
+	<link rel="stylesheet" type="text/css" href="AwM_style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>App with a Map</title>
+</head>
+<body>
+
+	<div id="app">
+		<p class="title"> App with a Map!</p>
+		<div v-on:click="placeAFlag()" class="michigan_map">
+			<img src="michigan-county-map.gif">
+			<div 
+			    v-on:click="removeFlag(flags, index, $event)"
+				v-for="(flags, index) in flagArray" 
+				class='thisFlag'
+				v-bind:style="{left : flags.pageX, top : flags.pageY}">
+			</div>
+			
+
+		</div>
+
+
+
+	</div>
+
+
+
+	<script type="text/javascript" src="Awm_function.js"></script>
+
+</body>
+</html>
